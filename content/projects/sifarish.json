@@ -1,0 +1,12 @@
+{
+  "problem": "The current job application process is plagued by fabricated resumes, generic AI-generated content, and a lack of personalization, leading to a high failure rate for both candidates and recruiters. 91% of recruiters actively hunt for fabricated resumes, and pretty resumes often die in ATS parsers.",
+  "approach": "SIFARISH takes a unique approach by compiling truth, drafting everything, and sending nothing. It uses a ledger-based system to ensure that every claim is evidence-linked, and a reasoning core to weigh every consequential choice and store a written, inspectable rationale.",
+  "architecture": [
+    "Sach Ledger: master profile as structured, two-tier data",
+    "Darzi Engine: technical crown jewel, compiles resume from JD to ATS-plain PDF and DOCX",
+    "Khabri Engine: multi-source discovery and hiring-signal radar",
+    "Guru Mode: conversational assistant that knows the ledger and provides guidance",
+    "Dimaag Core: reasoning engine that decides, critiques, and classifies with inspectable rationales"
+  ],
+  "oneLiner": "SIFARISH is a personal hiring agent that collapses hours of per-company tailoring into minutes without ever inventing a claim, ensuring a truthful and effective job application process."
+}
