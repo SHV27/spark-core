@@ -1,12 +1,12 @@
 {
-  "problem": "The current job application process is plagued by fabricated resumes, generic AI-generated content, and a lack of personalization, leading to a high failure rate for both candidates and recruiters. 91% of recruiters actively hunt for fabricated resumes, and pretty resumes often die in ATS parsers.",
-  "approach": "SIFARISH takes a unique approach by compiling truth, drafting everything, and sending nothing. It uses a ledger-based system to ensure that every claim is evidence-linked, and a reasoning core to weigh every consequential choice and store a written, inspectable rationale.",
+  "problem": "The current job application process is plagued by fabricated resumes and generic AI-generated content, making it difficult for recruiters to find genuine candidates. 91% of recruiters actively hunt for fabricated resumes, and pretty resumes often die in ATS parsers.",
+  "approach": "SIFARISH takes a technical approach to solving this problem by compiling truth and drafting everything, but sending nothing. It uses a combination of natural language processing, machine learning, and a rules-based system to ensure that every claim made on a resume is backed by evidence and that the resume is tailored to the specific job description.",
   "architecture": [
-    "Sach Ledger: master profile as structured, two-tier data",
-    "Darzi Engine: technical crown jewel, compiles resume from JD to ATS-plain PDF and DOCX",
-    "Khabri Engine: multi-source discovery and hiring-signal radar",
-    "Guru Mode: conversational assistant that knows the ledger and provides guidance",
-    "Dimaag Core: reasoning engine that decides, critiques, and classifies with inspectable rationales"
+    "Sach Ledger: stores the candidate's master profile as structured, two-tier data",
+    "Darzi Engine: compiles the resume from the ledger, ensuring every claim is evidence-backed",
+    "Khabri Engine: discovers job openings from multiple sources and provides a hiring-signal radar",
+    "Guru Mode: a conversational assistant that knows the candidate's ledger and provides guidance",
+    "Dimaag Core: a reasoning engine that weighs every consequential choice and stores an inspectable rationale"
   ],
-  "oneLiner": "SIFARISH is a personal hiring agent that collapses hours of per-company tailoring into minutes without ever inventing a claim, ensuring a truthful and effective job application process."
+  "oneLiner": "SIFARISH is a personal hiring agent that collapses hours of per-company tailoring into minutes without ever inventing a claim, ensuring that the truth is always well-armed and that lying would be a downgrade."
 }
