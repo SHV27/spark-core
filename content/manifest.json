@@ -7,7 +7,7 @@
   "hero": {
     "eyebrow": "B.Tech CSE · TIET Patiala · NTSE National Scholar",
     "sub": "I build intelligent systems that learn, reason, and solve.",
-    "body": "Third-year CS student specializing in deep learning, computer vision, and LLM-powered systems. I don't just use AI — I direct it."
+    "body": "Fourth-year CS student specializing in deep learning, computer vision, and LLM-powered systems. I don't just use AI — I direct it."
   },
   "origin": {
     "paragraphs": [
@@ -112,7 +112,7 @@
     },
     "stellarrift": {
       "title": "Stellarrift",
-      "visible": true,
+      "visible": false,
       "status": "IN_THE_FORGE",
       "pin": 5,
       "liveUrl": "",
@@ -121,7 +121,7 @@
     },
     "voidseer": {
       "title": "Voidseer",
-      "visible": true,
+      "visible": false,
       "status": "IN_THE_FORGE",
       "pin": 6,
       "liveUrl": "",
@@ -130,7 +130,7 @@
     },
     "galaxy-morphology-transfer": {
       "title": "Galaxy Morphology Transfer",
-      "visible": true,
+      "visible": false,
       "status": "IN_THE_FORGE",
       "pin": 7,
       "liveUrl": "",
@@ -139,8 +139,8 @@
     },
     "PRANA-Sustainable-AI": {
       "title": "PRANA",
-      "visible": false,
-      "status": "IN_THE_FORGE",
+      "visible": true,
+      "status": "SHIPPED",
       "pin": 8,
       "liveUrl": "",
       "accent": "cyan",
