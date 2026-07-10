@@ -150,6 +150,11 @@
   "ledger": [
     {
       "date": "2026-07-10",
+      "type": "milestone",
+      "entry": "SPARK CORE deployed � the portfolio now evolves itself"
+    },
+    {
+      "date": "2026-07-10",
       "type": "absorb",
       "entry": "absorbed sifarish — case study compiled by Cortex"
     },
