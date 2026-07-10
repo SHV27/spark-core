@@ -1,18 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ChevronDown, ArrowDown, Download } from "lucide-react";
+import { ChevronDown, ArrowDown } from "lucide-react";
+import type { HeroCopy, Identity } from "@/lib/types";
 
 interface HeroProps {
-  /** Gates the entrance animation until the boot sequence has finished. */
   reveal: boolean;
+  identity: Identity;
+  hero: HeroCopy;
+  /** e.g. "2 days ago" — the thesis of the whole site, rendered live. */
+  lastEvolvedText: string;
 }
 
 const container = {
   hidden: {},
-  show: {
-    transition: { staggerChildren: 0.1, delayChildren: 0.1 },
-  },
+  show: { transition: { staggerChildren: 0.1, delayChildren: 0.1 } },
 };
 
 const item = {
@@ -20,10 +22,13 @@ const item = {
   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: [0.21, 0.5, 0.3, 1] as const } },
 };
 
-export default function Hero({ reveal }: HeroProps) {
+export default function Hero({ reveal, identity, hero, lastEvolvedText }: HeroProps) {
   const scrollToMissions = () => {
     document.getElementById("missions")?.scrollIntoView({ behavior: "smooth" });
   };
+
+  const [first, ...rest] = identity.name.toUpperCase().split(" ");
+  const last = rest.join(" ");
 
   return (
     <section
@@ -40,37 +45,40 @@ export default function Hero({ reveal }: HeroProps) {
           variants={item}
           className="font-mono text-[0.7rem] uppercase tracking-[0.28em] text-cyan-primary sm:text-xs"
         >
-          B.Tech CSE · TIET Patiala · NTSE National Scholar
+          {hero.eyebrow}
         </motion.p>
 
         <motion.h1
           variants={item}
           className="mt-6 font-syne text-6xl font-extrabold leading-[0.95] tracking-tight text-text-primary sm:text-7xl md:text-8xl"
         >
-          SHAURYA
+          {first}
           <br />
-          <span className="gradient-text">VERMA</span>
+          <span className="gradient-text">{last}</span>
         </motion.h1>
 
         <motion.p
           variants={item}
-          className="mt-7 font-jakarta text-xl font-medium text-text-primary/90 sm:text-2xl"
+          className="mt-6 font-syne text-lg font-bold text-cyan-primary sm:text-xl"
         >
-          I build intelligent systems that learn, reason, and solve.
+          {identity.role}
+        </motion.p>
+
+        <motion.p
+          variants={item}
+          className="mt-4 font-jakarta text-xl font-medium text-text-primary/90 sm:text-2xl"
+        >
+          {hero.sub}
         </motion.p>
 
         <motion.p
           variants={item}
           className="mt-4 max-w-lg font-jakarta text-base leading-relaxed text-text-muted"
         >
-          Third-year CS student specializing in deep learning, computer vision,
-          and LLM-powered systems. I don&apos;t just use AI — I think in AI.
+          {hero.body}
         </motion.p>
 
-        <motion.div
-          variants={item}
-          className="mt-9 flex flex-col items-center gap-4 sm:flex-row"
-        >
+        <motion.div variants={item} className="mt-9">
           <button
             onClick={scrollToMissions}
             className="group inline-flex items-center gap-2 rounded-lg bg-cyan-primary px-6 py-3 font-jakarta font-semibold text-space-black transition-all duration-200 hover:scale-105 hover:shadow-glow-cyan-strong"
@@ -78,28 +86,27 @@ export default function Hero({ reveal }: HeroProps) {
             See My Work
             <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />
           </button>
-
-          <a
-            href="/resume.jpg"
-            download="Shaurya_Verma_Resume.jpg"
-            className="inline-flex items-center gap-2 rounded-lg border border-cyan-primary px-6 py-3 font-jakarta font-semibold text-cyan-primary transition-all duration-200 hover:bg-cyan-primary/10"
-          >
-            <Download className="h-4 w-4" />
-            Download Resume
-          </a>
         </motion.div>
 
-        {/* Easter egg: a quiet little discovery — fires the floating AnthemPlayer. */}
+        {/* The machine-voice stamp — this single live line is the site's thesis. */}
+        <motion.p
+          variants={item}
+          className="mt-8 font-mono text-xs tracking-wide text-text-muted"
+        >
+          <span className="text-cyan-primary">◈</span> Last evolved:{" "}
+          <span className="text-text-primary">{lastEvolvedText}</span> — autonomously
+        </motion.p>
+
+        {/* Easter egg: fires the floating AnthemPlayer. Barney energy stays. */}
         <motion.button
           variants={item}
           onClick={() => window.dispatchEvent(new Event("play-anthem"))}
-          className="mt-6 font-jakarta text-xs text-text-muted/70 transition-colors duration-200 hover:text-cyan-primary"
+          className="mt-4 font-jakarta text-xs text-text-muted/70 transition-colors duration-200 hover:text-cyan-primary"
         >
           🎵 I have a theme song
         </motion.button>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.button
         onClick={scrollToMissions}
         aria-label="Scroll to work"

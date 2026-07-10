@@ -1,42 +1,32 @@
-"use client";
+import { getLastEvolved, getManifest, getProjects, relativeTime } from "@/lib/github";
+import SparkShell from "@/components/SparkShell";
 
-import { useState } from "react";
-import NeuralBackground from "../components/ui/NeuralBackground";
-import TerminalBoot from "../components/ui/TerminalBoot";
-import AnthemPlayer from "../components/ui/AnthemPlayer";
-import Hero from "../components/sections/Hero";
-import Lore from "../components/sections/Lore";
-import Arsenal from "../components/sections/Arsenal";
-import Missions from "../components/sections/Missions";
-import LLMLab from "../components/sections/LLMLab";
-import BattleRecord from "../components/sections/BattleRecord";
-import TheVision from "../components/sections/TheVision";
-import Contact from "../components/sections/Contact";
+// Server component: all live data resolves here (manifest revalidate 60,
+// repos 3600) and flows down as props. Components contain zero personal copy —
+// THE DESIGN LAW. If GitHub is down, getManifest falls back to the bundled
+// manifest and getProjects returns [] — the page always renders.
+export const revalidate = 60;
 
-export default function Home() {
-  // `revealed` flips once the boot sequence resolves (played, skipped, or
-  // already-seen-this-session). The hero gates its entrance animation on it so
-  // content never pops in behind the terminal overlay.
-  const [revealed, setRevealed] = useState(false);
+export default async function Home() {
+  const manifest = await getManifest();
+  const projects = await getProjects(manifest);
+  const lastEvolved = getLastEvolved(projects, manifest);
+  const lastEvolvedText = relativeTime(lastEvolved);
+
+  const bootLines = [
+    "> SPARK CORE ONLINE",
+    "> SCANNING GITHUB…",
+    `> ${projects.length} PROJECT${projects.length === 1 ? "" : "S"} ABSORBED`,
+    `> LAST EVOLUTION: ${lastEvolvedText.toUpperCase()}`,
+    "> STATUS: SEEKING AI-FIRST TEAMS ✓",
+  ];
 
   return (
-    <>
-      <TerminalBoot onDone={() => setRevealed(true)} />
-      <NeuralBackground />
-
-      <main className="relative">
-        <Hero reveal={revealed} />
-        <Lore />
-        <Arsenal />
-        <Missions />
-        <LLMLab />
-        <BattleRecord />
-        <TheVision />
-        <Contact />
-      </main>
-
-      {/* Floating anthem player — above all content, reachable from anywhere. */}
-      <AnthemPlayer />
-    </>
+    <SparkShell
+      manifest={manifest}
+      projects={projects}
+      lastEvolvedText={lastEvolvedText}
+      bootLines={bootLines}
+    />
   );
 }

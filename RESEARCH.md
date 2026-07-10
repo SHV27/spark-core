@@ -23,6 +23,6 @@
 - NASA & STScI/JWST publicity images are public-domain / free-use with credit ("NASA, ESA, CSA, STScI"). Plan: 1 deep-field texture at low opacity in The Vision; credit in CREDITS.md + footer. If download is flaky, CSS starfield fallback (decision D-v2-3).
 
 ## Design decisions this session (also in CLAUDE.md Decisions)
-- D-v2-1: A repo counts as a project if it has the `spark` topic OR root `portfolio.json` OR is listed in `manifest.projects` — the manifest path means Shaurya never has to touch GitHub settings (his explicit ask).
+- D-v2-1 (corrected by Shaurya mid-session): ALL public non-fork repos are candidates, fetched automatically; ONLY `manifest.projects.<name>.visible:true` ships. Unlisted repos default hidden until promoted from /forge. GitHub source repos stay completely untouched.
 - D-v2-2: Forge saves commit to the repo; the public site reads the manifest from GitHub at runtime (revalidate 60) so edits go live without waiting for the CI deploy.
 - D-v2-3: JWST texture optional-with-fallback; never a hard dependency.

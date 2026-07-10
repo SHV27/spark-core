@@ -26,7 +26,7 @@ npx playwright test  # screenshot + invariant suite (the Referee)
 ## ARCHITECTURE (≤10 lines)
 - Next.js 14 App Router + TypeScript + Tailwind + Framer Motion. Existing repo, enhanced in place → same Vercel URL.
 - `content/manifest.json` = single source of truth (identity, skills, project overrides, ledger, vision). NO database.
-- `lib/github.ts`: server-side fetch of Shaurya's repos (PAT from env). Projects = repos with `spark` topic OR a `portfolio.json` at root, merged with manifest overrides. `next: { revalidate: 3600 }`.
+- `lib/github.ts`: server-side fetch of Shaurya's repos (PAT from env). Projects = ALL public non-fork repos, fetched automatically (`next: { revalidate: 3600 }`). Curation (visible/status/pin/accent/liveUrl/tagline) lives ENTIRELY in spark-core's manifest.json via /forge — never touches the source repo. Unlisted repos default hidden. Mirrors SIFARISH: auto-pull everything, human curates, Groq handles the descriptive detail work.
 - Manifest itself is fetched at runtime from GitHub contents API with `revalidate: 60` → edits go live in ~1 min, no redeploy.
 - `app/api/cortex/route.ts`: admin-triggered. README → Groq → case-study JSON → committed to `content/projects/<slug>.json` via GitHub contents API. Generated once, versioned forever.
 - `app/forge/`: hidden admin cockpit. `ADMIN_PASSWORD` → signed httpOnly session cookie. Every save = a commit to manifest.json through the GitHub API. GitHub IS the database.
@@ -84,7 +84,7 @@ When compacting context, preserve: modified-file list, current test status, PROG
 - 2026-07-10: Resume download removed; site is the resume. Masters-abroad node removed from Vision.
 - 2026-07-10: Krishi Mitra demoted to IN THE FORGE until shipped; SIFARISH is flagship (65/65 green, live).
 - 2026-07-10: Inspiration imagery is Shaurya-supplied in /public/inspiration/; site never fetches web images.
-- 2026-07-11: Project detection additionally includes repos listed in manifest.projects — Shaurya controls everything from /forge without touching GitHub topics (his explicit ask).
+- 2026-07-11: SUPERSEDED by correction: no spark topic, no portfolio.json — ALL public non-fork repos are candidates; only manifest.projects.<name>.visible:true ships; unlisted = hidden until promoted in /forge. Source repos never touched.
 - 2026-07-11: Provided classic PAT used for now; swap to fine-grained (Contents R/W + Metadata) and rotate the classic one — it was pasted in chat.
 - 2026-07-11: Repo = SHV27/spark-core (public), pushed from the existing local project; Vercel project unchanged.
 

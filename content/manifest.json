@@ -1,0 +1,136 @@
+{
+  "identity": {
+    "name": "Shaurya Verma",
+    "role": "AI Architect in the making.",
+    "location": "Punjab, India"
+  },
+  "hero": {
+    "eyebrow": "B.Tech CSE · TIET Patiala · NTSE National Scholar",
+    "sub": "I build intelligent systems that learn, reason, and solve.",
+    "body": "Third-year CS student specializing in deep learning, computer vision, and LLM-powered systems. I don't just use AI — I direct it."
+  },
+  "origin": {
+    "paragraphs": [
+      "I grew up in Rupnagar, Punjab, in a house where the blackboard never really turned off — my father taught physics, and dinner-table questions came with free-body diagrams.",
+      "But the real curriculum was Saturday mornings. The cartoons everyone else watched for the explosions, I watched for the machines — the ones that thought, chose sides, protected people. Somewhere between a physics lesson and a transforming robot, a kid decided that machines could have a soul, and that somebody had to be the one to build it.",
+      "Then I found deep learning, and the fiction snapped into syllabus: a galaxy classifier is a machine learning to see; a multimodal Alzheimer's detector is a machine learning to care about what it sees. Every project since has been the same project — teaching silicon to perceive, reason, and matter.",
+      "They called it science fiction. I call it a syllabus."
+    ],
+    "inspirations": []
+  },
+  "skills": [
+    {
+      "group": "LLM & AI-Native Development",
+      "highlight": true,
+      "tags": ["Claude API", "Prompt Engineering", "LLM Pipelines", "Structured Output Generation", "HuggingFace", "Groq"]
+    },
+    {
+      "group": "Deep Learning & Vision",
+      "highlight": false,
+      "tags": ["PyTorch", "TensorFlow", "Keras", "OpenCV", "CNN Architecture", "Transfer Learning", "ResNet"]
+    },
+    {
+      "group": "Machine Learning",
+      "highlight": false,
+      "tags": ["scikit-learn", "XGBoost", "Random Forest", "Pandas", "NumPy", "Matplotlib", "Seaborn"]
+    },
+    {
+      "group": "Languages & Tools",
+      "highlight": false,
+      "tags": ["Python", "TypeScript", "C", "C++", "Git", "Next.js", "Jupyter", "LaTeX", "Flask"]
+    }
+  ],
+  "projects": {
+    "sifarish": {
+      "title": "SIFARISH",
+      "visible": true,
+      "status": "SHIPPED",
+      "pin": 1,
+      "liveUrl": "",
+      "accent": "cyan",
+      "tagline": "सिफ़ारिश — a job-hunt chief of staff. Compile truth. Draft everything. Send nothing."
+    },
+    "spark-core": {
+      "title": "SPARK CORE",
+      "visible": true,
+      "status": "SHIPPED",
+      "pin": 2,
+      "liveUrl": "https://shaurya-portfolio-eta.vercel.app",
+      "accent": "violet",
+      "tagline": "This portfolio. It absorbs my repos, writes its own case studies, and updates without redeploys."
+    },
+    "sehat-saarthi": {
+      "title": "Sehat Saarthi",
+      "visible": true,
+      "status": "IN_THE_FORGE",
+      "pin": 3,
+      "liveUrl": "",
+      "accent": "cyan",
+      "tagline": "Punjabi-first clinical decision-support screening co-pilot (proof-of-concept, pending validation)."
+    },
+    "gloaming": {
+      "title": "Gloaming",
+      "visible": true,
+      "status": "SHIPPED",
+      "pin": 4,
+      "liveUrl": "https://gloaming-murex.vercel.app",
+      "accent": "violet",
+      "tagline": "An atmospheric browser game, built end-to-end and live."
+    },
+    "stellarrift": {
+      "title": "Stellarrift",
+      "visible": true,
+      "status": "IN_THE_FORGE",
+      "pin": 5,
+      "liveUrl": "",
+      "accent": "violet",
+      "tagline": "Dark-matter subhalo gap detection in stellar streams via KDE density analysis."
+    },
+    "voidseer": {
+      "title": "Voidseer",
+      "visible": true,
+      "status": "IN_THE_FORGE",
+      "pin": 6,
+      "liveUrl": "",
+      "accent": "violet",
+      "tagline": "Cosmic void shape statistics as a dark-energy equation-of-state probe."
+    },
+    "galaxy-morphology-transfer": {
+      "title": "Galaxy Morphology Transfer",
+      "visible": true,
+      "status": "IN_THE_FORGE",
+      "pin": 7,
+      "liveUrl": "",
+      "accent": "cyan",
+      "tagline": "Transfer learning on ResNet to classify spiral, elliptical, and irregular galaxies."
+    },
+    "PRANA-Sustainable-AI": {
+      "title": "PRANA",
+      "visible": false,
+      "status": "IN_THE_FORGE",
+      "pin": 8,
+      "liveUrl": "",
+      "accent": "cyan",
+      "tagline": "Sustainable-AI research workspace."
+    }
+  },
+  "ledger": [
+    { "date": "2026-07-11", "type": "milestone", "entry": "SPARK CORE comes online — this site begins evolving itself" },
+    { "date": "2026-07-09", "type": "milestone", "entry": "SIFARISH reaches 65/65 green — flagship status" },
+    { "date": "2026-06-23", "type": "milestone", "entry": "Gloaming ships live on Vercel" },
+    { "date": "2026-06-12", "type": "milestone", "entry": "Sehat Saarthi proof-of-concept enters the forge" },
+    { "date": "2026-05-01", "type": "milestone", "entry": "Stellarrift + Voidseer — two dark-universe research probes committed" },
+    { "date": "2026-04-25", "type": "milestone", "entry": "Galaxy morphology transfer-learning pipeline committed" },
+    { "date": "2025-11-01", "type": "milestone", "entry": "1st place — Gen AI Hackathon, IIT Ropar" },
+    { "date": "2025-08-01", "type": "skill", "entry": "AI Mentorship Program — Launched Global, in assoc. with IIT Kharagpur" },
+    { "date": "2021-06-01", "type": "milestone", "entry": "National NTSE Scholar — top ~0.01% nationwide in Science & Mathematics" }
+  ],
+  "vision": {
+    "manifesto": "The best engineers of this era won't be the ones who memorize frameworks. They'll be the ones who can look at a hard problem, understand its structure, and direct intelligent systems to build what one person alone never could. That's the engineer I'm becoming — in public, one absorbed project at a time. This site is the proof: it watches my GitHub, writes its own case studies, and logs its own evolution. I don't update my portfolio. I update my work, and the portfolio keeps up."
+  },
+  "contact": {
+    "email": "shaurya.verma2705@gmail.com",
+    "linkedin": "https://www.linkedin.com/in/shaurya-verma-94a607329/",
+    "github": "https://github.com/SHV27"
+  }
+}

@@ -8,22 +8,16 @@ import { motion, AnimatePresence } from "framer-motion";
 // localStorage) so the theatre replays for a genuinely new visit but never
 // nags within a session, and always render a SKIP for repeat/impatient users.
 
-const LINES = [
-  "> INITIALIZING PROFILE...",
-  "> LOADING: Shaurya Verma [AI/ML Engineer]",
-  "> CGPA: 7.82 | NTSE Scholar | TIET 2023-2027",
-  "> STATUS: Available for opportunities ✓",
-  "> BOOT COMPLETE.",
-];
-
-const CHAR_MS = 22;
-const LINE_PAUSE_MS = 180;
+const CHAR_MS = 18;
+const LINE_PAUSE_MS = 150;
 
 interface TerminalBootProps {
+  /** Boot log lines — computed server-side from LIVE data (Design Law). */
+  lines: string[];
   onDone: () => void;
 }
 
-export default function TerminalBoot({ onDone }: TerminalBootProps) {
+export default function TerminalBoot({ lines: LINES, onDone }: TerminalBootProps) {
   const [visible, setVisible] = useState(true);
   const [rendered, setRendered] = useState<string[]>([]);
   const [currentLine, setCurrentLine] = useState("");
@@ -121,7 +115,7 @@ export default function TerminalBoot({ onDone }: TerminalBootProps) {
               <span className="h-3 w-3 rounded-full bg-amber-400/70" />
               <span className="h-3 w-3 rounded-full bg-emerald-400/70" />
               <span className="ml-2 font-mono text-xs text-text-muted">
-                shaurya@portfolio: ~/boot
+                spark-core: ~/boot
               </span>
               <button
                 onClick={finish}

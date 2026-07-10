@@ -119,7 +119,15 @@ export default function NeuralBackground() {
               const lineAlpha = (1 - d / LINK_RADIUS) * 0.22 * boost;
               ctx.beginPath();
               ctx.moveTo(p.x, p.y);
-              ctx.lineTo(q.x, q.y);
+              // Energon seams: every third link routes as an angular circuit
+              // trace (H-then-V elbow) instead of a straight wire — the
+              // constellation occasionally reads as a live circuit board.
+              if ((i + j) % 3 === 0) {
+                ctx.lineTo(q.x, p.y);
+                ctx.lineTo(q.x, q.y);
+              } else {
+                ctx.lineTo(q.x, q.y);
+              }
               ctx.strokeStyle = `rgba(0, 229, 255, ${lineAlpha})`;
               ctx.lineWidth = 0.6;
               ctx.stroke();

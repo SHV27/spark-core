@@ -1,56 +1,37 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Mail, Phone, Linkedin, Github, Download, ArrowUpRight } from "lucide-react";
+import { Mail, Linkedin, Github, ArrowUpRight, type LucideIcon } from "lucide-react";
+import type { Identity } from "@/lib/types";
 import SectionHeader from "../ui/SectionHeader";
 
-interface ContactLink {
-  icon: typeof Mail;
-  label: string;
-  value: string;
-  href: string;
-  external?: boolean;
+interface ContactProps {
+  contact: { email: string; linkedin: string; github: string };
+  identity: Identity;
 }
 
-const links: ContactLink[] = [
-  {
-    icon: Mail,
-    label: "Email",
-    value: "shaurya.verma2705@gmail.com",
-    href: "mailto:shaurya.verma2705@gmail.com",
-  },
-  {
-    icon: Phone,
-    label: "Phone",
-    value: "+91-9041523296",
-    href: "tel:+919041523296",
-  },
-  {
-    icon: Linkedin,
-    label: "LinkedIn",
-    value: "linkedin.com/in/shaurya-verma-94a607329",
-    href: "https://www.linkedin.com/in/shaurya-verma-94a607329/",
-    external: true,
-  },
-  {
-    icon: Github,
-    label: "GitHub",
-    value: "github.com/SHV27",
-    href: "https://github.com/SHV27",
-    external: true,
-  },
-];
+export default function Contact({ contact, identity }: ContactProps) {
+  const links: Array<{ icon: LucideIcon; label: string; value: string; href: string; external: boolean }> = [
+    { icon: Mail, label: "Email", value: contact.email, href: `mailto:${contact.email}`, external: false },
+    {
+      icon: Linkedin,
+      label: "LinkedIn",
+      value: contact.linkedin.replace(/^https?:\/\/(www\.)?/, "").replace(/\/$/, ""),
+      href: contact.linkedin,
+      external: true,
+    },
+    {
+      icon: Github,
+      label: "GitHub",
+      value: contact.github.replace(/^https?:\/\/(www\.)?/, ""),
+      href: contact.github,
+      external: true,
+    },
+  ];
 
-export default function Contact() {
   return (
     <section id="contact" className="relative z-10 mx-auto max-w-4xl px-6 py-24 sm:py-28">
       <SectionHeader eyebrow="Contact" title="Let's build something." />
-
-      <p className="mt-8 max-w-2xl font-jakarta text-base leading-relaxed text-text-muted sm:text-lg">
-        I&apos;m actively seeking AI/ML internship opportunities for my 8th
-        semester (Jan 2027). If you&apos;re building something interesting with
-        AI, I want to know about it.
-      </p>
 
       <div className="mt-10 space-y-3">
         {links.map((link, idx) => {
@@ -84,24 +65,18 @@ export default function Contact() {
         })}
       </div>
 
-      <div className="mt-10">
-        <a
-          href="/resume.jpg"
-          download="Shaurya_Verma_Resume.jpg"
-          className="inline-flex items-center gap-2 rounded-lg bg-cyan-primary px-6 py-3 font-jakarta font-semibold text-space-black transition-all duration-200 hover:scale-105 hover:shadow-glow-cyan-strong"
-        >
-          <Download className="h-4 w-4" />
-          Download Resume
-        </a>
-      </div>
+      {/* Law 5: the resume download is dead. */}
+      <p className="mt-10 font-mono text-sm text-text-muted">
+        <span className="text-cyan-primary">◈</span> This site is my resume. It
+        updates itself.
+      </p>
 
-      {/* Footer */}
       <footer className="mt-20 border-t border-border-subtle pt-8 text-center">
         <p className="font-jakarta text-sm text-text-muted">
-          Shaurya Verma · B.Tech CSE, TIET Patiala · 2026
+          {identity.name} · {identity.location}
         </p>
         <p className="mt-1 font-mono text-xs text-text-muted/70">
-          Built with Next.js · Deployed on Vercel
+          SPARK CORE — self-evolving · Next.js · GitHub-as-database · Groq cortex
         </p>
       </footer>
     </section>
