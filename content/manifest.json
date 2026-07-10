@@ -22,22 +22,55 @@
     {
       "group": "LLM & AI-Native Development",
       "highlight": true,
-      "tags": ["Claude API", "Prompt Engineering", "LLM Pipelines", "Structured Output Generation", "HuggingFace", "Groq"]
+      "tags": [
+        "Claude API",
+        "Prompt Engineering",
+        "LLM Pipelines",
+        "Structured Output Generation",
+        "HuggingFace",
+        "Groq"
+      ]
     },
     {
       "group": "Deep Learning & Vision",
       "highlight": false,
-      "tags": ["PyTorch", "TensorFlow", "Keras", "OpenCV", "CNN Architecture", "Transfer Learning", "ResNet"]
+      "tags": [
+        "PyTorch",
+        "TensorFlow",
+        "Keras",
+        "OpenCV",
+        "CNN Architecture",
+        "Transfer Learning",
+        "ResNet"
+      ]
     },
     {
       "group": "Machine Learning",
       "highlight": false,
-      "tags": ["scikit-learn", "XGBoost", "Random Forest", "Pandas", "NumPy", "Matplotlib", "Seaborn"]
+      "tags": [
+        "scikit-learn",
+        "XGBoost",
+        "Random Forest",
+        "Pandas",
+        "NumPy",
+        "Matplotlib",
+        "Seaborn"
+      ]
     },
     {
       "group": "Languages & Tools",
       "highlight": false,
-      "tags": ["Python", "TypeScript", "C", "C++", "Git", "Next.js", "Jupyter", "LaTeX", "Flask"]
+      "tags": [
+        "Python",
+        "TypeScript",
+        "C",
+        "C++",
+        "Git",
+        "Next.js",
+        "Jupyter",
+        "LaTeX",
+        "Flask"
+      ]
     }
   ],
   "projects": {
@@ -115,15 +148,56 @@
     }
   },
   "ledger": [
-    { "date": "2026-07-11", "type": "milestone", "entry": "SPARK CORE comes online — this site begins evolving itself" },
-    { "date": "2026-07-09", "type": "milestone", "entry": "SIFARISH reaches 65/65 green — flagship status" },
-    { "date": "2026-06-23", "type": "milestone", "entry": "Gloaming ships live on Vercel" },
-    { "date": "2026-06-12", "type": "milestone", "entry": "Sehat Saarthi proof-of-concept enters the forge" },
-    { "date": "2026-05-01", "type": "milestone", "entry": "Stellarrift + Voidseer — two dark-universe research probes committed" },
-    { "date": "2026-04-25", "type": "milestone", "entry": "Galaxy morphology transfer-learning pipeline committed" },
-    { "date": "2025-11-01", "type": "milestone", "entry": "1st place — Gen AI Hackathon, IIT Ropar" },
-    { "date": "2025-08-01", "type": "skill", "entry": "AI Mentorship Program — Launched Global, in assoc. with IIT Kharagpur" },
-    { "date": "2021-06-01", "type": "milestone", "entry": "National NTSE Scholar — top ~0.01% nationwide in Science & Mathematics" }
+    {
+      "date": "2026-07-10",
+      "type": "absorb",
+      "entry": "absorbed sifarish — case study compiled by Cortex"
+    },
+    {
+      "date": "2026-07-11",
+      "type": "milestone",
+      "entry": "SPARK CORE comes online — this site begins evolving itself"
+    },
+    {
+      "date": "2026-07-09",
+      "type": "milestone",
+      "entry": "SIFARISH reaches 65/65 green — flagship status"
+    },
+    {
+      "date": "2026-06-23",
+      "type": "milestone",
+      "entry": "Gloaming ships live on Vercel"
+    },
+    {
+      "date": "2026-06-12",
+      "type": "milestone",
+      "entry": "Sehat Saarthi proof-of-concept enters the forge"
+    },
+    {
+      "date": "2026-05-01",
+      "type": "milestone",
+      "entry": "Stellarrift + Voidseer — two dark-universe research probes committed"
+    },
+    {
+      "date": "2026-04-25",
+      "type": "milestone",
+      "entry": "Galaxy morphology transfer-learning pipeline committed"
+    },
+    {
+      "date": "2025-11-01",
+      "type": "milestone",
+      "entry": "1st place — Gen AI Hackathon, IIT Ropar"
+    },
+    {
+      "date": "2025-08-01",
+      "type": "skill",
+      "entry": "AI Mentorship Program — Launched Global, in assoc. with IIT Kharagpur"
+    },
+    {
+      "date": "2021-06-01",
+      "type": "milestone",
+      "entry": "National NTSE Scholar — top ~0.01% nationwide in Science & Mathematics"
+    }
   ],
   "vision": {
     "manifesto": "The best engineers of this era won't be the ones who memorize frameworks. They'll be the ones who can look at a hard problem, understand its structure, and direct intelligent systems to build what one person alone never could. That's the engineer I'm becoming — in public, one absorbed project at a time. This site is the proof: it watches my GitHub, writes its own case studies, and logs its own evolution. I don't update my portfolio. I update my work, and the portfolio keeps up."
