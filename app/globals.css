@@ -1,0 +1,89 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --space-black: #080c16;
+  --space-deep: #0f1629;
+  --space-card: #141c33;
+  --cyan-primary: #00e5ff;
+  --violet-accent: #8b5cf6;
+  --text-primary: #f0f6ff;
+  --text-muted: #94a3b8;
+  --border-subtle: #1e2d4f;
+  --glow-cyan: rgba(0, 229, 255, 0.15);
+  --glow-violet: rgba(139, 92, 246, 0.15);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: var(--space-black);
+    color: var(--text-primary);
+    font-family: var(--font-jakarta), sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  /* Disable smooth scroll + animations for reduced-motion users */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.001ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.001ms !important;
+    }
+  }
+
+  ::selection {
+    background-color: rgba(0, 229, 255, 0.25);
+    color: var(--text-primary);
+  }
+}
+
+@layer components {
+  /* Cyan → violet gradient text used for the "VERMA" wordmark and accents */
+  .gradient-text {
+    background-image: linear-gradient(90deg, #00e5ff, #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Eyebrow label used above every section title */
+  .eyebrow {
+    font-family: var(--font-mono), monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--cyan-primary);
+  }
+}
+
+/* Custom scrollbar — keeps the deep-space aesthetic consistent */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--space-black);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #2a3f6b;
+}
+
+html {
+  scrollbar-color: var(--border-subtle) var(--space-black);
+}
